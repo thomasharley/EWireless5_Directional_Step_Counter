@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <item
+        android:id="@+id/nav_compass"
+        android:title="Compass App"
+        android:icon="@drawable/compassicon"/>
+    <item
+        android:id="@+id/nav_pedometer"
+        android:title="Pedometer App"
+        android:icon="@drawable/pedometericon"/>
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings"
+        android:icon="@drawable/settingsicon"/>
+
+</menu>

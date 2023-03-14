@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:icon="@drawable/pedometericon"
+        android:dialogTitle="Enter Step Goal"
+        android:key="stepgoal"
+        android:inputType="number"
+        android:summary="Click to configure step goal of pedometer"
+        android:title="Edit Step Goal"
+        android:defaultValue="5000" />
+
+    <EditTextPreference
+        android:icon="@drawable/weighticon"
+        android:dialogTitle="Enter Weight (kg)"
+        android:key="weight"
+        android:inputType="number"
+        android:summary="Click to enter your weight in kg"
+        android:title="Edit Weight (kg)"
+        android:defaultValue="70" />
+
+    <EditTextPreference
+        android:icon="@drawable/heighticon"
+        android:dialogTitle="Enter Height (cm)"
+        android:key="height"
+        android:inputType="number"
+        android:summary="Click to enter your height in cm"
+        android:title="Edit Height (cm)"
+        android:defaultValue="180" />
+
+    <Preference
+        android:title="Save Settings"
+        android:key="button"
+        android:summary="Click this button to save settings"
+        />
+
+</androidx.preference.PreferenceScreen>

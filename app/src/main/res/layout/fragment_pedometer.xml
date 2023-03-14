@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/textTriangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-8dp"
+            android:text="▼"
+            android:textColor="#A02422"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/circularProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cpb_background_progressbar_color="#b6bbd8"
+                app:cpb_background_progressbar_width="25dp"
+                app:cpb_progress_direction="to_right"
+                app:cpb_progressbar_color="#DD7500"
+                app:cpb_progressbar_width="25dp"
+                app:cpb_round_border="true" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textStepsNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-45dp"
+            android:text="Steps"
+            android:textColor="@color/black"
+            android:textSize="55sp"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+        <TextView
+            android:id="@+id/textStepGoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/StepGoal"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textStepsNumber" />
+
+        <TextView
+            android:id="@+id/textSteps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textStepGoal" />
+
+        <ImageButton
+            android:id="@+id/imageResetButton"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/circlebutton"
+            android:padding="13dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+            app:srcCompat="@drawable/reseticon"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/imageViewCalories"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageResetButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageResetButton"
+            app:srcCompat="@drawable/pedometershape" />
+
+
+        <ImageView
+            android:id="@+id/imageViewCaloriesIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewCalories"
+            app:layout_constraintStart_toStartOf="@+id/imageViewCalories"
+            app:layout_constraintTop_toTopOf="@+id/imageViewCalories"
+            app:srcCompat="@drawable/caloriesicon" />
+
+        <TextView
+            android:id="@+id/textCalories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewCalories"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewCalories"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCaloriesIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewCalories" />
+
+        <TextView
+            android:id="@+id/textBurned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Burned"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewCalories"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCaloriesIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textCalories" />
+
+        <ImageView
+            android:id="@+id/imageViewDistance"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageResetButton"
+            app:layout_constraintTop_toBottomOf="@+id/imageResetButton"
+            app:srcCompat="@drawable/pedometershape2" />
+
+        <ImageView
+            android:id="@+id/imageViewDistanceIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewDistance"
+            app:layout_constraintStart_toStartOf="@+id/imageViewDistance"
+            app:layout_constraintTop_toTopOf="@+id/imageViewDistance"
+            app:srcCompat="@drawable/distanceicon" />
+
+        <TextView
+            android:id="@+id/textKilometres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:text="0.0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewDistance"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewDistance"
+            app:layout_constraintStart_toEndOf="@+id/imageViewDistanceIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewDistance" />
+
+        <TextView
+            android:id="@+id/textDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Km"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewDistance"
+            app:layout_constraintStart_toEndOf="@+id/imageViewDistanceIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textKilometres" />
+
+        <ImageView
+            android:id="@+id/imageViewComass"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewCalories"
+            app:layout_constraintStart_toStartOf="@+id/imageViewCalories"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCalories"
+            app:srcCompat="@drawable/cardinalsteps" />
+
+        <ImageView
+            android:id="@+id/imageViewCompassIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewComass"
+            app:layout_constraintStart_toStartOf="@+id/imageViewComass"
+            app:layout_constraintTop_toTopOf="@+id/imageViewComass"
+            app:srcCompat="@drawable/northcompassicon" />
+
+        <TextView
+            android:id="@+id/textDegrees2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewComass"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewComass"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCompassIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewComass" />
+
+        <TextView
+            android:id="@+id/textDegrees3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Degrees"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewComass"
+            app:layout_constraintStart_toEndOf="@+id/imageViewCompassIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textDegrees2" />
+
+        <ImageView
+            android:id="@+id/imageViewStepGoal"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewDistance"
+            app:layout_constraintStart_toStartOf="@+id/imageViewDistance"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewDistance"
+            app:srcCompat="@drawable/pedometershape3" />
+
+        <ImageView
+            android:id="@+id/imageViewStepGoalIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewStepGoal"
+            app:layout_constraintStart_toStartOf="@+id/imageViewStepGoal"
+            app:layout_constraintTop_toTopOf="@+id/imageViewStepGoal"
+            app:srcCompat="@drawable/stepgoalicon" />
+
+        <TextView
+            android:id="@+id/textStepGoal2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewStepGoal"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewStepGoal"
+            app:layout_constraintStart_toEndOf="@+id/imageViewStepGoalIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewStepGoal" />
+
+        <TextView
+            android:id="@+id/textStepGoal3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goal"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewStepGoal"
+            app:layout_constraintStart_toEndOf="@+id/imageViewStepGoalIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textStepGoal2" />
+
+        <ImageView
+            android:id="@+id/imageViewNorth"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewCalories"
+            app:layout_constraintStart_toStartOf="@+id/imageViewCalories"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewComass"
+            app:srcCompat="@drawable/cardinalsteps" />
+
+        <ImageView
+            android:id="@+id/imageViewNorthIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewNorth"
+            app:layout_constraintStart_toStartOf="@+id/imageViewNorth"
+            app:layout_constraintTop_toTopOf="@+id/imageViewNorth"
+            app:srcCompat="@drawable/northicon" />
+
+        <TextView
+            android:id="@+id/textStepsNorth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewNorth"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewNorth"
+            app:layout_constraintStart_toEndOf="@+id/imageViewNorthIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewNorth" />
+
+        <TextView
+            android:id="@+id/textSteps1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewNorth"
+            app:layout_constraintStart_toEndOf="@+id/imageViewNorthIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textStepsNorth" />
+
+        <ImageView
+            android:id="@+id/imageViewEast"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewNorth"
+            app:layout_constraintStart_toStartOf="@+id/imageViewNorth"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewNorth"
+            app:srcCompat="@drawable/cardinalsteps" />
+
+        <ImageView
+            android:id="@+id/imageViewEastIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewEast"
+            app:layout_constraintStart_toStartOf="@+id/imageViewEast"
+            app:layout_constraintTop_toTopOf="@+id/imageViewEast"
+            app:srcCompat="@drawable/easticon" />
+
+        <TextView
+            android:id="@+id/textStepsEast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewEast"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewEast"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEastIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewEast" />
+
+        <TextView
+            android:id="@+id/textSteps3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewEast"
+            app:layout_constraintStart_toEndOf="@+id/imageViewEastIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textStepsEast" />
+
+        <ImageView
+            android:id="@+id/imageViewSouth"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewDistance"
+            app:layout_constraintStart_toStartOf="@+id/imageViewDistance"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewStepGoal"
+            app:srcCompat="@drawable/cardinalsteps" />
+
+        <ImageView
+            android:id="@+id/imageViewSouthIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewSouth"
+            app:layout_constraintStart_toStartOf="@+id/imageViewSouth"
+            app:layout_constraintTop_toTopOf="@+id/imageViewSouth"
+            app:srcCompat="@drawable/southicon" />
+
+        <TextView
+            android:id="@+id/textStepsSouth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewSouth"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewSouth"
+            app:layout_constraintStart_toEndOf="@+id/imageViewSouthIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewSouth" />
+
+        <TextView
+            android:id="@+id/textSteps2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewSouth"
+            app:layout_constraintStart_toEndOf="@+id/imageViewSouthIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textStepsSouth" />
+
+        <ImageView
+            android:id="@+id/imageViewWest"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewSouth"
+            app:layout_constraintStart_toStartOf="@+id/imageViewSouth"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewSouth"
+            app:srcCompat="@drawable/cardinalsteps" />
+
+        <ImageView
+            android:id="@+id/imageViewWestIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewWest"
+            app:layout_constraintStart_toStartOf="@+id/imageViewWest"
+            app:layout_constraintTop_toTopOf="@+id/imageViewWest"
+            app:srcCompat="@drawable/westicon" />
+
+        <TextView
+            android:id="@+id/textStepsWest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-32dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewWest"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewWest"
+            app:layout_constraintStart_toEndOf="@+id/imageViewWestIcon"
+            app:layout_constraintTop_toTopOf="@+id/imageViewWest" />
+
+        <TextView
+            android:id="@+id/textSteps4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewWest"
+            app:layout_constraintStart_toEndOf="@+id/imageViewWestIcon"
+            app:layout_constraintTop_toBottomOf="@+id/textStepsWest" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
